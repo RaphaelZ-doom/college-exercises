@@ -20,18 +20,5 @@ class PesquisaBinaria{
         return -1;
     }
 
-    public int BuscaMenor(int[] Array, int contagem)
-    {
-        int menor = Array[contagem];
-        int menor_indice = contagem;
-        for (int i = contagem; i < Array.Length; i++)
-        {
-            if (Array[i] < menor)
-            {
-                menor = Array[i];
-                menor_indice = i;
-            }
-        }
-        return menor_indice;
-    }
+   
 }
