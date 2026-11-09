@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace Exercicios.Estruturas;
 
 class ListaSimplesmenteEncadeada
@@ -33,14 +35,45 @@ class ListaSimplesmenteEncadeada
 
         }
 
-        public void Remover()
+        public void Remover(int ValorParaRemover)
         {
+            if (Head == null) return;
+            if (Head.valor == ValorParaRemover)
+            {
+                
+                Head = Head.proximo;
+                return;
+            }
+            No anterior = null;
+            No atual = Head;
+
+            while (atual != null)
+            {
+                if (atual.valor == ValorParaRemover)
+                {
+                    anterior.proximo = atual.proximo;
+                    
+                    return;
+                }
+                anterior = atual;
+                atual = atual.proximo;
+            }
+
 
         }
 
-        public void Buscar()
+        public bool Buscar(int  value)
         {
-
+            No procurando = Head;
+            while (procurando != null)
+            {
+                if (procurando.valor == value)
+                    return true;
+                else
+                    procurando = procurando.proximo;
+                    
+            }
+            return false;
         }
     }
 }
