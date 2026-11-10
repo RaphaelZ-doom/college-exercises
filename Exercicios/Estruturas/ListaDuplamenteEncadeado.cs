@@ -65,6 +65,7 @@ class ListaDuplamenteEncadeada
             }
             AtualParaRemover = AtualParaRemover.proximo;
         }
+        
     }
 
     public bool buscar(int valor)
