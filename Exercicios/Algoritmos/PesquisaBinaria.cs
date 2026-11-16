@@ -1,24 +1,33 @@
 namespace Exercicios.Algoritmos;
 
-class PesquisaBinaria{
-    public int PesquisaBinaaria(int[] array, int alvo)
+class PesquinaBinaria
+{
+    public int PesquinaBinariaa(int[] vetor, int alvo)
     {
-        int baixo = 0;
-        int alto = array.Length - 1;
-        while (baixo <= alto)
-        {
-            int meio = (alto - baixo) / 2 + baixo;
-            int chute = array[meio];
+        int inicio = 0;
+        int Fim = vetor.Length - 1;
 
-            if (chute == alvo)
+        while (inicio <= Fim)
+        {
+            int meio = 0;
+            meio= (inicio + Fim) / 2;
+            if (vetor[meio] == alvo)
                 return meio;
-            if (chute > alvo)
-                alto = meio - 1;
-            else
-                baixo = meio + 1;
+
+            else if (alvo < vetor[meio])
+            {
+                Fim = meio - 1;
+
+            }
+
+            else if (alvo > vetor[meio])
+            {
+                inicio = meio + 1;
+            }
         }
         return -1;
     }
-
-   
 }
+
+
+
