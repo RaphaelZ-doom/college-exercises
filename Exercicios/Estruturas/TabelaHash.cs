@@ -56,6 +56,18 @@ class TabelaHash
 
     public int Buscar (string chave )
     {
+        int indice = FuncaoHash(chave);
+        NoHash atual = buckets[indice];
+        while ( atual != null)
+        {
+            if (atual.chave == chave)
+            return atual.valor;
+            else
+            {
+                atual = atual.proximo;
+            }
+        }
+        return -1;
         
     }
 }
